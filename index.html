@@ -1,27 +1,89 @@
-<!doctype html>
+# Resume content provided by the user
+resume_content = {
+    "Contact Information": {
+        "phone": "7082657776",
+        "Email": "revanthreddy286@gmail.com"
+    },
+    "Summary": "Results-driven Data Engineer/Data Analyst with a strong background in Python, SQL, and data management. Seeking a challenging position to leverage my expertise in developing data pipelines, analyzing data, and providing insights to drive business growth",
+    "Work Experience": {
+        "Data Engineer/Data Analyst - Capital one - Oct 2021 - Present": [
+            "Utilize Python, SQL, and other tools like Apache Spark, Snowflake, Hive, Automic, and Kafka to develop data pipelines, streams, reporting layers, decks, and dashboards.",
+            "Perform massive parallel processing using Kubernetes (K8) and AWS EMR on commodity clusters to process large-scale data sets with millions to billions of records, using Pyspark and BTEQ scripting.",
+            "Develop SQL scripts for data change capture (CDC), incremental loading, batch loading, stored procedures, and handling slowly changing dimensions.",
+            "Utilize Python and Shell scripting to automate tasks, reduce repeatability, and increase productivity.",
+            "Perform data analysis, manipulation, and visualization using Python libraries such as Pandas, Matplotlib, NumPy, and SciPy, creating graphs and charts to represent insights.",
+            "Deploy and run Python and Spark applications on clusters using tools like Docker, K8, or EMR.",
+            "Work with data warehousing tools like Snowflake to efficiently manage data.",
+            "Collaborate with cross-functional teams to resolve production issues promptly, identify root causes, and apply debugging techniques or create patches for issue remediation.",
+            "Ensure minimal business impact by providing timely support and troubleshooting using Python, SQL, Automic, and AWS.",
+            "Acted as a front-line defense for critical production jobs, actively monitoring and resolving issues throughout the day.",
+            "Collaborated with different teams to investigate and identify the root cause of issues, ensuring swift resolution and minimal business impact."
+        ]
+    },
+    "Education": {
+        "Master of Science in Computer Science - University of Missouri-St. Louis - Jan 2019 - May 2021": [],
+        "Bachelor of Technology in Electronics and Computer Engineering - Jawaharlal Nehru Technological University - Aug 2014 - May 2018": []
+    },
+    "Skills": {
+        "Python": "8/10",
+        "SQL": "9/10",
+        "Shell": "8/10",
+        "Spark": "8/10",
+        "Hive": "8/10",
+        "Kafka": "8/10",
+        "Snowflake": "9/10",
+        "AWS/Azure": "8/10",
+        "Kubernetes": "7/10",
+        "MongoDB": "8/10",
+        "PostgreSQL": "9/10"
+    },
+    "Projects": {
+        "Self Driving Car: Research on Evolutionary Computing": [],
+        "Image Reconstruction Using Genetic Algorithm": ["The idea of this project is to reconstruct a reference image with polygons using Genetic Algorithms."],
+        "Research on Evolutionary Computing": ["Worked on a Research independent project under Dr. Uday Chakraborty in Evolutionary Computing."]
+    }
+}
+
+# Generate basic HTML structure for the resume
+html_content = """
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revanth Reddy Madireddy's Resume</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .section { margin-bottom: 20px; }
+        .section-title { font-size: 20px; font-weight: bold; margin-bottom: 10px; }
+        .subsection-title { font-size: 18px; font-weight: bold; }
+        ul { margin-top: 5px; }
+        li { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <div class="section">
+        <div class="section-title">Contact Information</div>
+        <p>Phone: {contact_phone}</p>
+        <p>Email: {contact_email}</p>
+    </div>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <div class="section">
+        <div class="section-title">Summary</div>
+        <p>{summary}</p>
+    </div>
 
-    <title>Hello, world!</title>
-  </head>
-  <body>
-    <h1>Hello, world!</h1>
+    <div class="section">
+        <div class="section-title">Work Experience</div>
+        {work_experience}
+    </div>
 
-    <!-- Optional JavaScript; choose one of the two! -->
+    <div class="section">
+        <div class="section-title">Education</div>
+        {education}
+    </div>
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-    -->
-  </body>
-</html>
+    <div class="section">
+        <div class="section-title">Skills</div>
+        {skills}
+    </div
